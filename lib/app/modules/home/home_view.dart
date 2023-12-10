@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
-import 'home_controller.dart';
+import 'package:todo_flutter/app/modules/home/home_controller.dart';
+import 'package:todo_flutter/app/modules/home/widgets/todo_list_widget.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        title: const Text('HomeView'),
+        title: const Text('Simple ToDo'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: const ToDoListWidget(),
     );
   }
 }
